@@ -28,6 +28,13 @@ const connectDB = async() => {
     }
 }
 
+app.get("/", (req, res) => {
+  res.json({
+    message: "SigmaGPT API is running",
+    status: "OK",
+  });
+});
+
  // app.post("/test", async (req, res) => {
 //     const options = {
 //         method: "POST",
