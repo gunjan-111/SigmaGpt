@@ -14,6 +14,7 @@ function App() {
   const [newChat, setNewChat] = useState(true);
   const [allThreads, setAllThreads] = useState([]);
   const [username, setUsername] = useState(localStorage.getItem("username") || null);
+const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark"); 
 
   const handleLogin = (username) => {
         setUsername(username);
@@ -25,6 +26,12 @@ function App() {
         setUsername(null);
     };
 
+    const toggleTheme = () => {  
+        const newTheme = theme === "dark" ? "light" : "dark";
+        setTheme(newTheme);
+        localStorage.setItem("theme", newTheme);
+    };
+
   const providerValues = {
     prompt, setPrompt,
     reply, setReply,
@@ -34,7 +41,8 @@ function App() {
     allThreads, setAllThreads,
     username, setUsername,
     handleLogin,
-    handleLogout
+    handleLogout,
+    theme, toggleTheme 
   }; 
 
   if (!username) {
@@ -42,7 +50,7 @@ function App() {
     }
 
   return (
-    <div className='app'>
+    <div className={`app ${theme}`}>
       <MyContext.Provider value={providerValues}>
           <Sidebar></Sidebar>
           <ChatWindow></ChatWindow>
