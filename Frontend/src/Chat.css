@@ -1,4 +1,13 @@
+.newChatScreen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    height: 100%;
+}
+
 .chats {
+    flex: 1;
     max-width: 700px;
     overflow-y: scroll;
     padding: 8rem;
