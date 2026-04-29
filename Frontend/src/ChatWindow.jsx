@@ -6,7 +6,7 @@ import {ScaleLoader} from "react-spinners";
 import API from "./api";
 
 function ChatWindow() {
-    const {prompt, setPrompt, reply, setReply, currThreadId, setPrevChats, setNewChat} = useContext(MyContext);
+    const {prompt, setPrompt, reply, setReply, currThreadId, setPrevChats, setNewChat, handleLogout} = useContext(MyContext);
     const [loading, setLoading] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
 
@@ -15,10 +15,13 @@ function ChatWindow() {
         setNewChat(false);
 
         console.log("message ", prompt, " threadId ", currThreadId);
+        const token = localStorage.getItem("token");
+        
         const options = {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${token}`
             },
             body: JSON.stringify({
                 message: prompt,
@@ -72,7 +75,9 @@ function ChatWindow() {
                 <div className="dropDown">
                     <div className="dropDownItem"><i class="fa-solid fa-gear"></i> Settings</div>
                     <div className="dropDownItem"><i class="fa-solid fa-cloud-arrow-up"></i> Upgrade plan</div>
-                    <div className="dropDownItem"><i class="fa-solid fa-arrow-right-from-bracket"></i> Log out</div>
+                    <div className="dropDownItem" onClick={handleLogout}>
+                        <i class="fa-solid fa-arrow-right-from-bracket"></i> Log out
+                    </div>
                 </div>
             }
             <Chat></Chat>

@@ -1,6 +1,7 @@
 import './App.css';
 import Sidebar from "./Sidebar.jsx";
 import ChatWindow from "./ChatWindow.jsx";
+import Login from "./Login.jsx";
 import {MyContext} from "./MyContext.jsx";
 import { useState } from 'react';
 import {v1 as uuidv1} from "uuid";
@@ -12,6 +13,17 @@ function App() {
   const [prevChats, setPrevChats] = useState([]); //stores all chats of curr threads
   const [newChat, setNewChat] = useState(true);
   const [allThreads, setAllThreads] = useState([]);
+  const [username, setUsername] = useState(localStorage.getItem("username") || null);
+
+  const handleLogin = (username) => {
+        setUsername(username);
+    };
+
+    const handleLogout = () => {
+        localStorage.removeItem("token");
+        localStorage.removeItem("username");
+        setUsername(null);
+    };
 
   const providerValues = {
     prompt, setPrompt,
@@ -19,8 +31,15 @@ function App() {
     currThreadId, setCurrThreadId,
     newChat, setNewChat,
     prevChats, setPrevChats,
-    allThreads, setAllThreads
+    allThreads, setAllThreads,
+    username, setUsername,
+    handleLogin,
+    handleLogout
   }; 
+
+  if (!username) {
+        return <Login onLogin={handleLogin} />;
+    }
 
   return (
     <div className='app'>

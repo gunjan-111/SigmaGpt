@@ -1,0 +1,95 @@
+.loginPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #212121;
+}
+
+.loginBox {
+    background-color: #2f2f2f;
+    padding: 40px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    width: 100%;
+    max-width: 400px;
+}
+
+.loginLogo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.loginBox h1 {
+    color: white;
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+.loginBox h2 {
+    color: #ccc;
+    font-size: 1rem;
+    margin: 0;
+    font-weight: 400;
+}
+
+.loginBox input {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background-color: #3f3f3f;
+    color: white;
+    font-size: 1rem;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.loginBox input:focus {
+    border-color: #888;
+}
+
+.loginBox button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: white;
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.loginBox button:hover {
+    background-color: #ddd;
+}
+
+.loginBox button:disabled {
+    background-color: #888;
+    cursor: not-allowed;
+}
+
+.errorMsg {
+    color: #ff4d4d;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.switchText {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.switchText span {
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: underline;
+}
