@@ -26,6 +26,19 @@
     background-color: var(--hover-color);
 }
 
+.logo {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.history {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0;
+    margin: 10px 0;
+}
+
 .history li {
     color: var(--text-primary);
     padding: 10px;
@@ -35,6 +48,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-size: 0.9rem;
 }
 
 .history li:hover {
@@ -43,6 +57,19 @@
 
 .highlighted {
     background-color: var(--hover-color) !important;
+}
+
+.fa-trash {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+}
+
+.fa-trash:hover {
+    color: var(--text-primary);
+}
+
+.sign {
+    padding: 10px;
 }
 
 .sign p {

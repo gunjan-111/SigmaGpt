@@ -10,14 +10,15 @@
     font-size: 0.9rem;
 }
 
-
 .gptDiv {
     text-align: left;
     font-size: 0.9rem;
+    color: var(--text-primary);
 }
 
 .userMessage {
-    background-color: #323232;
+    background-color: var(--user-msg-bg);
+    color: var(--text-primary);
     padding: 10px 20px;
     border-radius: 14px;
     margin-left: 15rem;

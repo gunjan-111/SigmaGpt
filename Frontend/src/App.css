@@ -1,5 +1,4 @@
 * {
-    color: #ececec;
     font-family: Roboto, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -8,7 +7,34 @@ body {
     padding: 0;
 }
 
+/* Dark theme (default) */
+.app.dark {
+    --bg-primary: #212121;
+    --bg-secondary: #2f2f2f;
+    --bg-input: #3f3f3f;
+    --text-primary: #ececec;
+    --text-secondary: #aaaaaa;
+    --border-color: #444444;
+    --hover-color: #444444;
+    --user-msg-bg: #323232;
+}
+
+/* Light theme */
+.app.light {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f5f5f5;
+    --bg-input: #eeeeee;
+    --text-primary: #000000;
+    --text-secondary: #555555;
+    --border-color: #dddddd;
+    --hover-color: #e0e0e0;
+    --user-msg-bg: #e0e0e0;
+}
+
 .app {
-    background-color: #212121;
     display: flex;
+    height: 100vh;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
 }

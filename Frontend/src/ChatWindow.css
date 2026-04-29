@@ -17,6 +17,22 @@
     border-bottom: 1px solid var(--border-color);
 }
 
+.navbar span {
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.userIcon {
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+.chatInput {
+    padding: 16px;
+    background-color: var(--bg-primary);
+}
+
 .inputBox {
     display: flex;
     align-items: center;
@@ -40,6 +56,18 @@
     color: var(--text-secondary);
 }
 
+#submit {
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+.info {
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    text-align: center;
+    margin-top: 8px;
+}
+
 .dropDown {
     background-color: var(--bg-secondary);
     border: 1px solid var(--border-color);
@@ -54,6 +82,7 @@
     padding: 10px 20px;
     color: var(--text-primary);
     cursor: pointer;
+    white-space: nowrap;
 }
 
 .dropDownItem:hover {
