@@ -6,7 +6,7 @@ import {ScaleLoader} from "react-spinners";
 import API from "./api";
 
 function ChatWindow() {
-    const {prompt, setPrompt, reply, setReply, currThreadId, setPrevChats, setNewChat, handleLogout, theme, toggleTheme } = useContext(MyContext);
+    const {prompt, setPrompt, reply, setReply, currThreadId, setPrevChats, setNewChat, handleLogout, theme, toggleTheme, sidebarOpen, setSidebarOpen } = useContext(MyContext);
     const [loading, setLoading] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
 
@@ -64,20 +64,24 @@ function ChatWindow() {
 
     return (
         <div className="chatWindow">
-            <div className="navbar">
-    <span>SigmaGPT <i className="fa-solid fa-chevron-down"></i></span>
+        <div className="navbar">
     <div style={{display: "flex", alignItems: "center", gap: "12px"}}>
-        
-        {/* Theme toggle button */}
+        {/* Hamburger menu - only shows on mobile */}
+        <button className="menuBtn" onClick={() => setSidebarOpen(true)}>
+            <i className="fa-solid fa-bars"></i>
+        </button>
+        <span>SigmaGPT <i className="fa-solid fa-chevron-down"></i></span>
+    </div>
+    <div style={{display: "flex", alignItems: "center", gap: "12px"}}>
         <span onClick={toggleTheme} style={{cursor: "pointer", fontSize: "1.2rem"}}>
             {theme === "dark" ? "☀️" : "🌙"}
         </span>
-
         <div className="userIconDiv" onClick={handleProfileClick}>
             <span className="userIcon"><i className="fa-solid fa-user"></i></span>
         </div>
     </div>
 </div>
+
             {
                 isOpen && 
                 <div className="dropDown">

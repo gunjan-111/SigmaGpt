@@ -89,3 +89,36 @@
     background-color: var(--hover-color);
     border-radius: 10px;
 }
+
+.menuBtn {
+    display: none;
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    cursor: pointer;
+    padding: 0;
+}
+
+@media (max-width: 768px) {
+    .menuBtn {
+        display: block;
+    }
+
+    .chatWindow {
+        margin-left: 0 !important;
+        width: 100vw;
+    }
+
+    .chats {
+        padding: 2rem !important;
+    }
+
+    .userMessage {
+        margin-left: 2rem !important;
+    }
+
+    .inputBox {
+        margin: 0 8px;
+    }
+}

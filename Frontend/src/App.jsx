@@ -15,6 +15,7 @@ function App() {
   const [allThreads, setAllThreads] = useState([]);
   const [username, setUsername] = useState(localStorage.getItem("username") || null);
 const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark"); 
+const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const handleLogin = (username) => {
         setUsername(username);
@@ -42,7 +43,8 @@ const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
     username, setUsername,
     handleLogin,
     handleLogout,
-    theme, toggleTheme 
+    theme, toggleTheme,
+    sidebarOpen, setSidebarOpen
   }; 
 
   if (!username) {
@@ -52,7 +54,7 @@ const [theme, setTheme] = useState(localStorage.getItem("theme") || "dark");
   return (
     <div className={`app ${theme}`}>
       <MyContext.Provider value={providerValues}>
-          <Sidebar></Sidebar>
+          <Sidebar isOpen={sidebarOpen} onClose={() => setSidebarOpen(false)} />
           <ChatWindow></ChatWindow>
         </MyContext.Provider>
     </div>
