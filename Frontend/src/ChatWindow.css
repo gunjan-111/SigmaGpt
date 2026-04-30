@@ -15,6 +15,7 @@
     flex-direction: column;
     overflow: hidden;
     position: relative;
+    min-height: 0;
 }
 
 .navbar {
@@ -25,6 +26,7 @@
     background-color: var(--bg-primary);
     color: var(--text-primary);
     border-bottom: 1px solid var(--border-color);
+    flex-shrink: 0;
 }
 
 .navbar span {
@@ -41,6 +43,7 @@
 .chatInput {
     padding: 16px;
     background-color: var(--bg-primary);
+    flex-shrink: 0;
 }
 
 .inputBox {
@@ -101,7 +104,7 @@
 }
 
 .menuBtn {
-    display: none;
+    display: block;
     background: none;
     border: none;
     color: var(--text-primary);
@@ -111,17 +114,12 @@
 }
 
 @media (max-width: 768px) {
-    .menuBtn {
-        display: block;
-    }
-
     .chatWindow {
-        margin-left: 0 !important;
         width: 100vw;
     }
 
     .chats {
-        padding: 2rem !important;
+        padding: 1rem !important;
     }
 
     .userMessage {

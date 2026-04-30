@@ -38,10 +38,3 @@ body {
     color: var(--text-primary);
     transition: all 0.3s ease;
 }
-
-
-@media (max-width: 768px) {
-    .app {
-        flex-direction: column;
-    }
-}
